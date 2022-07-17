@@ -2,11 +2,6 @@ const webdriver = require('selenium-webdriver');
 const { until } = require('selenium-webdriver');
 const { By } = require('selenium-webdriver');
 
-const getElementById = async (driver, id, timeout = 2000) => {
-  const el = await driver.wait(until.elementLocated(By.id(id)), timeout);
-  return await driver.wait(until.elementIsVisible(el), timeout);
-};
-
 const getElementByName = async (driver, name, timeout = 2000) => {
   const el = await driver.wait(until.elementLocated(By.name(name)), timeout);
   return await driver.wait(until.elementIsVisible(el), timeout);
